@@ -1,0 +1,99 @@
+.nav {
+  width: 100%;
+  height: 56px;
+  border-bottom: 1px solid #363738;
+}
+
+nav {
+  background: #242527;
+  padding: 5px 10px 0 13px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.odinbook {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: #393b3c;
+  height: 40px;
+  padding: 0 12px;
+  margin: 0 0 0 4px;
+  border-radius: 25px;
+}
+
+.search-bar input[type='text'] {
+  background: #393b3c;
+  color: #e5e6eb;
+  border: none;
+  padding-left: 8px;
+  width: 240px;
+}
+
+.search-bar input[type='text']:focus {
+  outline: none
+}
+
+.nav-other {
+  margin-left: 191px;
+}
+
+.icon {
+  color: #e5e6eb;
+  transition: background-color 0.2s linear;
+}
+
+.round {
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  margin: 0 4px;
+  border-radius: 25px;
+  background: #393b3c;
+}
+
+.round:hover {
+  background: #4d4f50;
+}
+
+.square {
+  width: 25px;
+  height: 25px;
+  padding: 12px 38px;
+  margin: 0 4px;
+  border-radius: 8px;
+}
+
+.square:hover {
+  background: #393b3c;
+}
+
+.odinbook-logo {
+  background: #097cea;
+  transition: none;
+}
+
+.odinbook-logo:hover {
+  background: #097cea;
+}
+
+@media screen and (max-width: 1260px) {
+  .search-bar input[type='text'] {
+    display: none;
+  }
+
+  .odinbook {
+    margin-right: 52px;
+  }
+
+  .nav-other {
+    margin-left: 0;
+  }
+}

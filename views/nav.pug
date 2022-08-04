@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    meta(charset='UTC-8')
+    title= title
+    link(rel='stylesheet', href='/stylesheets/reset.css')
+    link(rel='stylesheet', href='/stylesheets/nav.css')
+    link(rel='stylesheet', href='/stylesheets/index.css')
+    script(src='https://kit.fontawesome.com/b3f3d12dad.js' crossorigin='anonymous')
+  body
+    .nav 
+      nav 
+        .odinbook 
+          i.round.icon.odinbook-logo.fa-solid.fa-terminal
+          .search-bar 
+            i.icon.fa-solid.fa-magnifying-glass
+            input(type='text' placeholder='Search Odinbook')
+        .nav-main 
+          i.square.icon.fa-solid.fa-house 
+          i.square.icon.fa-solid.fa-user-group 
+          i.square.icon.fa-solid.fa-circle-user 
+        .nav-other 
+          i.round.icon.fa-solid.fa-plus 
+          i.round.icon.fa-solid.fa-comment-dots
+          i.round.icon.fa-solid.fa-bell
+          a(href='/logout')
+            i.round.icon.fa-solid.fa-arrow-right-from-bracket
+    block content
