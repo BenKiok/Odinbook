@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    meta(charset='UTC-8')
+    title= title
+    link(rel='stylesheet', href='../public/stylesheets/reset.css')
+    link(rel='stylesheet', href='../public/stylesheets/index.css')
+    link(rel='stylesheet', href='../public/stylesheets/login.css')
+  body 
+    .auth.signup 
+      .heading 
+        h1 odinbook 
+        h2 Sign up. It's quick and easy.
+      .form
+        form(action='/signup' method='POST')
+          input(type='text' placeholder='Username' required)
+          input(type='password' placeholder='Password' required)
+          input(type='password' placeholder='Confirm password' required)
+          button.auth-btn Sign Up
+        button.auth-btn.fb-auth Sign up with Facebook 
+        a.form-switch-link(href='/login')
+          button.form-switch-btn Already have an account?

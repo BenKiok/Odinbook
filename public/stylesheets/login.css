@@ -1,0 +1,111 @@
+.auth {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: top;
+  padding: 135px 70px 0 70px;
+  color: #fff;
+}
+
+.auth .heading {
+  width: 450px;
+  padding: 50px 0;
+  line-height: 1.25;
+}
+
+.auth h1 {
+  font-size: 3.5rem;
+  color: #097cea;
+}
+
+.auth h2 {
+  padding-top: 10px;
+  font-weight: normal;
+  font-size: 1.7rem;
+}
+
+.auth .form, .auth form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth .form {
+  min-width: 400px;
+  background: #363738;
+  border-radius: 10px;
+}
+
+.auth form *, .auth .fb-auth {
+  width: 364px;
+  height: 52px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 18px;
+}
+
+.auth input {
+  padding: 0 16px;
+  font-size: 1.1rem;
+  border: 1px solid #dfdfe0;
+  color: #bdc1c4;
+  background: inherit;
+}
+
+.auth input:focus {
+  border-color: #097cea;
+}
+
+.auth .auth-btn {
+  height: 48px;
+  font-size: 1.1rem;
+  color: #fff;
+  background: #097cea;
+  font-weight: bold;
+}
+
+.auth .auth-btn:hover {
+  background: #1260c7;
+}
+
+.auth .form-switch-btn {
+  background: inherit;
+  border: none;
+  color: #097cea;
+  padding: 20px 0;
+}
+
+.auth .form-switch-btn:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 1075px) {
+  .auth {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .auth .heading {
+    width: 350px;
+  }
+  
+  .auth h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .auth {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0;
+  }
+
+  .auth .heading {
+    padding-top: 30px;
+    text-align: center;
+    width: 380px;
+  }
+}
