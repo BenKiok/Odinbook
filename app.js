@@ -10,6 +10,10 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+mongoose.connect(process.env.MONGODB, { useUnifiedTopology: true, useNewUrlParser: true });
+mongoose.connection.on('connected', console.log.bind(console, 'Database connected!'));
+mongoose.connection.on('error', console.error.bind(console, 'MongoDB Atlas connection error'));
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
