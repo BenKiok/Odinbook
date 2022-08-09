@@ -7,12 +7,8 @@ const passport = require('passport'),
 require('dotenv').config();
 
 passport.use(new LocalStrategy(
-  {
-    usernameField: 'email',
-    passwordField: 'password'
-  },
-  (email, password, cb) => {
-    User.findOne({email}, (err, user) => {
+  (username, password, cb) => {
+    User.findOne({username}, (err, user) => {
       if (err) { 
         return cb(err);
       }
