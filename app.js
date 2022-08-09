@@ -11,6 +11,7 @@ require('./passport');
 
 var indexRouter = require('./routes/index');
 const mainRouter = require('./routes/main');
+const authRouter = require('./routes/auth');
 var usersRouter = require('./routes/users');
 
 var app = express();
@@ -34,11 +35,23 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use((req, res, next) => {
+  if (req.originalUrl.includes('favicon.ico')) {
+    res.status(204).end();
+  }
+  next();
+});
+
+app.use((req, res, next) => {
   res.locals.user = req.user;
   next();
 });
 
-app.use('/', indexRouter, mainRouter);
+app.use('/',
+  authRouter,
+  indexRouter,
+  passport.authenticate('local'),
+  mainRouter
+);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
