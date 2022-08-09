@@ -47,7 +47,7 @@ app.use((req, res, next) => {
 
 app.use('/',
   authRouter,
-  passport.authenticate('local'),
+  passport.authenticate('local', {failureRedirect: '/login'}),
   mainRouter
 );
 app.use('/users', usersRouter);
