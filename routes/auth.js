@@ -12,4 +12,12 @@ router.get('/logout', auth_controller.user_logout_GET);
 router.post('/signup', auth_controller.user_signup_POST);
 router.post('/login', auth_controller.user_login_POST);
 
+router.get('/', (req, res, next) => {
+  if (!res.locals.user) {
+    res.redirect('/login');
+  } else {
+    res.redirect('/timeline'); 
+  }
+});
+
 module.exports = router;

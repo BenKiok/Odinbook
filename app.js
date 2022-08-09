@@ -9,9 +9,8 @@ const createError = require('http-errors'),
 require('dotenv').config();
 require('./passport');
 
-const indexRouter = require('./routes/index'),
+const authRouter = require('./routes/auth'),
       mainRouter = require('./routes/main'),
-      authRouter = require('./routes/auth'),
       usersRouter = require('./routes/users');
 
 const app = express();
@@ -48,7 +47,6 @@ app.use((req, res, next) => {
 
 app.use('/',
   authRouter,
-  indexRouter,
   passport.authenticate('local'),
   mainRouter
 );
