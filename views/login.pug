@@ -13,8 +13,8 @@ html
         h2 Connect with friends and the world around you on Odinbook.
       .form
         form(action='/login' method='POST')
-          input(type='text' placeholder='Username' required)
-          input(type='password' placeholder='Password' required)
+          input(type='text' placeholder='Username' name='username' required)
+          input(type='password' placeholder='Password' name='password' required)
           button.auth-btn Log In
         button.auth-btn.fb-auth Log in with Facebook 
         a.form-switch-link(href='/signup')

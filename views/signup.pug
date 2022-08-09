@@ -13,9 +13,9 @@ html
         h2 Sign up. It's quick and easy.
       .form
         form(action='/signup' method='POST')
-          input(type='text' placeholder='Username' required)
-          input(type='password' placeholder='Password' required)
-          input(type='password' placeholder='Confirm password' required)
+          input(type='text' placeholder='Username' name='username' required)
+          input(type='password' placeholder='Password' name='password' required)
+          input(type='password' placeholder='Confirm password' name='password-confirm' required)
           button.auth-btn Sign Up
         button.auth-btn.fb-auth Sign up with Facebook 
         a.form-switch-link(href='/login')
