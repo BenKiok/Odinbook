@@ -1,20 +1,20 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-const mongoose = require('mongoose');
-const session = require('express-session');
-const passport = require('passport');
+const createError = require('http-errors'),
+      express = require('express'),
+      path = require('path'),
+      cookieParser = require('cookie-parser'),
+      logger = require('morgan'),
+      mongoose = require('mongoose'),
+      session = require('express-session'),
+      passport = require('passport');
 require('dotenv').config();
 require('./passport');
 
-var indexRouter = require('./routes/index');
-const mainRouter = require('./routes/main');
-const authRouter = require('./routes/auth');
-var usersRouter = require('./routes/users');
+const indexRouter = require('./routes/index'),
+      mainRouter = require('./routes/main'),
+      authRouter = require('./routes/auth'),
+      usersRouter = require('./routes/users');
 
-var app = express();
+const app = express();
 
 mongoose.connect(process.env.MONGODB, { useUnifiedTopology: true, useNewUrlParser: true });
 mongoose.connection.on('connected', console.log.bind(console, 'Database connected!'));
