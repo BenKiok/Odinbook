@@ -34,13 +34,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use((req, res, next) => {
-  if (req.originalUrl.includes('favicon.ico')) {
-    res.status(204).end();
-  }
-  next();
-});
-
-app.use((req, res, next) => {
   res.locals.user = req.user;
   next();
 });
