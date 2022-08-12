@@ -9,7 +9,8 @@ const createError = require('http-errors'),
 require('dotenv').config();
 require('./passport');
 
-const authRouter = require('./routes/auth'),
+const indexRouter = require('./routes/index'),
+      authRouter = require('./routes/auth'),
       mainRouter = require('./routes/main'),
       usersRouter = require('./routes/users');
 
@@ -38,7 +39,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/', authRouter, mainRouter);
+app.use('/', indexRouter, authRouter, mainRouter);
 app.use('/users', usersRouter);
 
 app.use(function(req, res, next) {
