@@ -26,10 +26,10 @@ app.set('view engine', 'pug');
 app.use(session({ secret: process.env.SESSION_SECRET, resave: false, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(express.urlencoded({ extended: false }));
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -38,11 +38,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/',
-  authRouter,
-  passport.authenticate('local', {failureRedirect: '/login'}),
-  mainRouter
-);
+app.use('/', authRouter, mainRouter);
 app.use('/users', usersRouter);
 
 app.use(function(req, res, next) {

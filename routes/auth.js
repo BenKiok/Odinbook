@@ -12,4 +12,6 @@ router.get('/logout', auth_controller.user_logout_GET);
 router.post('/signup', auth_controller.user_signup_POST);
 router.post('/login', auth_controller.user_login_POST);
 
+router.get('/*', auth_controller.verify_auth_GET);
+
 module.exports = router;

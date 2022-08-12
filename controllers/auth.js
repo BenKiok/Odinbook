@@ -104,3 +104,11 @@ exports.user_logout_GET = (req, res, next) => {
     res.redirect('/');
   });
 }
+
+exports.verify_auth_GET = (req, res, next) => {
+  if (res.locals.user) {
+    next();
+  } else {
+    res.redirect('/login');
+  }
+}
