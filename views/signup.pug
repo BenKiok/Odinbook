@@ -17,6 +17,7 @@ html
           input(type='password' placeholder='Password' name='password' required)
           input(type='password' placeholder='Confirm password' name='password-confirm' required)
           button.auth-btn Sign Up
-        button.auth-btn.fb-auth Sign up with Facebook 
+        a.fb-auth-link(href='/login/facebook')
+          button.auth-btn.fb-auth Sign up with Facebook 
         a.form-switch-link(href='/login')
           button.form-switch-btn Already have an account?

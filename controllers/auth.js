@@ -86,14 +86,21 @@ exports.user_login_POST = [
 
 exports.facebook_login_GET = (req, res, next) => {
   passport.authenticate('facebook', {
-    successRedirect: '/', 
     failureRedirect: '/login', 
     failureMessage: true
   }, (err, user, info) => {
     if (err || !user) {
       return next(err);
     }
-  })(req, res);
+    
+    req.login(user, err => {
+      if (err) {
+        return next(err);
+      }
+      
+      res.redirect('/');
+    });
+  })(req, res, next);
 }
 
 exports.user_logout_GET = (req, res, next) => {
@@ -106,7 +113,7 @@ exports.user_logout_GET = (req, res, next) => {
 }
 
 exports.verify_auth_GET = (req, res, next) => {
-  if (res.locals.user) {
+  if (req.isAuthenticated()) {
     next();
   } else {
     res.redirect('/login');

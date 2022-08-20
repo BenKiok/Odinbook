@@ -29,7 +29,7 @@ passport.use(new LocalStrategy(
 passport.use(new FacebookStrategy({
     clientID: process.env['FB_APP_ID'],
     clientSecret: process.env['FB_APP_SECRET'],
-    callbackURL: `http://localhost:${process.env.PORT}/api/oauth2/redirect/facebook`
+    callbackURL: `http://localhost:${process.env.PORT}/oauth2/redirect/facebook`
   },
   function(accessToken, refreshToken, profile, cb) {
     User.findOne({ facebookId: profile.id }, (err, user) => {
