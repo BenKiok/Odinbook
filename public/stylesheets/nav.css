@@ -14,6 +14,20 @@ nav {
   align-items: center;
 }
 
+svg.round {
+  height: 20px;
+  width: 20px;
+}
+
+svg.square {
+  height: 25px;
+  width: 25px;
+}
+
+svg.odinbook-logo {
+  height: 19px;
+}
+
 .odinbook {
   display: flex;
   align-items: center;
@@ -48,11 +62,10 @@ nav {
 .icon {
   color: #e5e6eb;
   transition: background-color 0.2s linear;
+  cursor: pointer;
 }
 
 .round {
-  width: 20px;
-  height: 20px;
   padding: 10px;
   margin: 0 4px;
   border-radius: 25px;
@@ -64,8 +77,6 @@ nav {
 }
 
 .square {
-  width: 25px;
-  height: 25px;
   padding: 12px 38px;
   margin: 0 4px;
   border-radius: 8px;
