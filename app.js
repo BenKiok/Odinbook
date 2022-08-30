@@ -11,8 +11,7 @@ require('./passport');
 
 const indexRouter = require('./routes/index'),
       authRouter = require('./routes/auth'),
-      mainRouter = require('./routes/main'),
-      usersRouter = require('./routes/users');
+      mainRouter = require('./routes/main');
 
 const app = express();
 
@@ -40,7 +39,6 @@ app.use((req, res, next) => {
 });
 
 app.use('/', indexRouter, authRouter, mainRouter);
-app.use('/users', usersRouter);
 
 app.use(function(req, res, next) {
   next(createError(404));
