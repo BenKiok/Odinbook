@@ -1,3 +1,7 @@
 extends nav
 block content 
-  h1 You're all caught up, yay!
+  .timeline
+    form.post-form(action='' method='POST')
+      i.icon.round me
+      textarea(type='text' name='body' placeholder='What\'s on your mind?')
+      button Post
