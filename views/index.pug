@@ -1,7 +1,14 @@
 extends nav
 block content
   .timeline
-    form.post-form(action=(user.id+'/new/post') method='POST')
+    form.post.form(action=(user.id+'/new/post') method='POST')
       i.icon.round me
       textarea(type='text' name='body' placeholder='What\'s on your mind?')
       button Post
+    for post in posts
+      .post
+        i.icon.round ppl
+        .post-meta
+          p #{post.user.username}
+          p #{post.date}
+        h3 #{post.body}

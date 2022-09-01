@@ -1,5 +1,6 @@
 const Post = require('../models/Post'),
       User = require('../models/User'),
+      Comment = require('../models/Comment'),
       {body, validationResult} = require('express-validator');
 
 exports.new_post_POST = [
@@ -37,3 +38,27 @@ exports.new_post_POST = [
     }
   }
 ]
+
+exports.timeline_GET = (req, res, next) => {
+  return (async () => {
+    const user = res.locals.user;
+    let timeline = [], arr;
+
+    // collect posts from user
+    arr = await Post.find({user}).populate('comments').populate('user').exec();
+    timeline.push(...arr);
+
+    // collect posts from each friend of user
+    const friends = user.friends;
+    for (const i in user.friends) {
+      arr = await Post.find({user: friends[i]}).populate('comments').populate('user').exec();
+      timeline.push(...arr);
+    }
+
+    // organize by date newest to oldest
+    timeline = timeline.sort((a, b) => b.date - a.date);
+
+    // return array of posts
+    return res.render('index', {title: 'Timeline', user: res.locals.user, posts: timeline});
+  })();
+}
