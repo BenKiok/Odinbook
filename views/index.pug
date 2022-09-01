@@ -1,7 +1,7 @@
 extends nav
-block content 
+block content
   .timeline
-    form.post-form(action='' method='POST')
+    form.post-form(action=(user.id+'/new/post') method='POST')
       i.icon.round me
       textarea(type='text' name='body' placeholder='What\'s on your mind?')
       button Post
