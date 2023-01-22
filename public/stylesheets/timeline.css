@@ -70,6 +70,14 @@
   padding: 0 3px 6px 3px;
 }
 
+.likes {
+  display: flex;
+}
+
+.likes p {
+  padding-left: 6px;
+}
+
 .post-react {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -92,4 +100,8 @@
 .react-btn h4 {
   margin-left: 8px;
   font-weight: normal;
+}
+
+.hidden {
+  display: none;
 }
